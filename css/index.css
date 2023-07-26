@@ -4,9 +4,220 @@
 
 /* 그리드시스템 설정 */
 .container {
+    position: relative;
     width: 100%; /* 모바일, 태블릿의 크기 */
     max-width: 1024px; /* pc 크기 */
     margin: 0 auto;
 }
 
 /*===== header =====*/
+/* mobile */
+header {
+    width: 100%;
+    height: 300px;
+    background: url(../images/header.jpg) no-repeat left top;
+    background-size: cover;
+}
+
+.logo-menu {
+    position: relative;
+    width: 100%; height: 60px;
+    background-color: black;
+}
+
+.logo-menu  h1 {
+    font-family: 'Yeon Sung';
+    color: #fff;
+    padding: 10px 0 0 20px;
+}
+
+.gnb {
+    display: none;
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    background-color: #ccc;
+}
+
+.gnb > li {
+    padding: 20px;
+}
+
+.gnb > li:nth-child(2) {
+    background-color: gray;
+}
+
+.gnb > li > a {
+    color: #000;
+}
+
+.gnb > li > a:hover {
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.mobile-btn {
+    position: absolute;
+    right: 20px;
+    top: 16px;
+    cursor: pointer;
+}
+
+.mobile-btn > span {
+    display: block;
+    width: 30px; height: 2px;
+    background-color: #fff;
+}
+
+.mobile-btn > span:nth-child(2) {
+    margin: 10px 0;
+}
+
+
+/* tablet */
+@media (min-width:768px) {
+    header {
+        height: 400px;
+    }
+}
+
+
+/* pc */
+@media (min-width:1024px) {
+    header {
+        height: 500px;
+    }
+
+    .gnb {
+        display: flex; /* 주메뉴 보이기, 가로 배치 */
+        justify-content: space-between;
+        position: absolute;
+        top: 0px; right: 20px;
+        width: 300px;
+        background-color: transparent;
+    }
+    
+    .gnb > li {
+        padding: 20px 0;
+    }
+    
+    .gnb > li:nth-child(2) {
+        background-color: transparent;
+    }
+    
+    .gnb > li > a {
+        color: #fff;
+    }
+
+    .mobile-btn {
+        display: none; /* 모바일 메뉴 아이콘 숨기기 */
+    }
+}
+
+
+/*=====  main =====*/
+/* mobile */
+section {
+    padding: 30px;
+    background-color: antiquewhite;
+}
+
+section#map {
+    background-color: #ccc;
+}
+
+.flex-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-content .photo {
+    display: none;
+}
+
+.content-txt {
+    margin-top: 20px;
+}
+
+.content-txt > p {
+    font-weight: 600;
+}
+
+#choice .content-txt > h3 {
+    color: skyblue;
+    margin-bottom: 15px;
+}
+
+#choice .content-txt li {
+    list-style-type: decimal;
+    list-style-position: inside;
+    margin-bottom: 5px;
+}
+
+/* tablet */
+@media (min-width:768px) {
+    .flex-content {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .flex-content > section {
+        width: 50%;
+        border: 1px dotted #aaa;
+    }
+
+    .flex-content > section#choice {
+        width: 100%;
+    }
+}
+
+
+/* pc */
+@media (min-width:1024px) {
+    .flex-content {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .flex-content > section {
+        width: 100%;
+        border: none;
+    }
+
+    .flex-box {
+        display: flex;
+    }
+    
+    .flex-box .photo {
+        display: block;
+        margin: 20px 20px 0 0; /* 위 오른쪽 아래 왼쪽 */
+    }
+
+    section#choice .flex-box .photo {
+        order: 2;
+        margin-right: 0;
+        margin-left: 50px;
+    }
+    
+    section#choice .flex-box .photo > img {
+        border-radius: 50%;
+    }
+
+    section#choice .flex-box .content-txt {
+        order: 1;
+    }
+}
+
+
+/*===== footer =====*/
+footer {
+    width: 100%; height: 100px;
+    background-color: #000;
+}
+
+footer > h2 {
+    font-family: 'Yeon Sung';
+    color: #fff;
+    text-align: center;
+    line-height: 100px;
+}
